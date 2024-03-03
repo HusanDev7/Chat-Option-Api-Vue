@@ -1,0 +1,248 @@
+@import "./fonts.scss";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #98C0FF;
+    height: 100vh;
+}
+
+.app {
+    display: flex;
+    gap: 30px;
+}
+
+.app__chat {
+    width: 400px;
+    height: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: url(../images/img-bg.png);
+}
+
+
+
+.app__chat-header {
+    padding: 31px 20px;
+    background: #323232;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+
+    &-info {
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+    }
+
+    &-title {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 14px; 
+        color: #fff;
+    }
+
+    &-status {
+        color: #FFF;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 18px;
+    }
+}
+
+
+// main 
+
+.app__chat-main {
+    overflow: auto;
+    height: 632px;
+
+    &-item {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    &-body {
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+
+        // &.send{
+         
+        // }
+
+        // &.get{
+           
+        // }
+    }
+
+    &-text {
+      max-width: 80%;
+      word-wrap: break-word;
+      padding: 5px 10px;
+      display: flex;
+    }
+}
+
+.app__chat-main-body.send {
+    justify-content: end;
+}
+
+.app__chat-main-body.get {
+    flex-direction: row-reverse;
+    justify-content: start;
+}
+
+
+.app__chat-main-body.send .app__chat-main-text {
+    border-radius: 15px 15px 15px 0px;
+    background: #D0DCFF;
+    margin-left: 5px;
+}
+
+.app__chat-main-body.get .app__chat-main-text {
+    border-radius: 15px 15px 15px 0px;
+    background: #C4BFFF;
+    margin-right: 5px;
+}
+
+
+
+// footer 
+
+.app__chat-footer {
+   padding: 16px 20px;
+   background: #323232;
+   display: flex;
+   align-items: center;
+   width: 100%;
+
+   &-inp {
+    border: none;
+    outline: none;
+    background: none;
+    flex-grow: 1;
+    color: #ffff;
+    resize: none;
+    font-size: 16px;
+   }
+
+    &-btn {
+        width: 24px;
+        height: 24px;
+        border: none;
+        outline: none;
+        background: transparent;
+        cursor: pointer;
+    }
+
+}
+
+.modal {
+    background: rgba(0, 0, 0, 0.35);
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__block {
+        max-width: 312px;
+        width: 100%;
+        min-height: 288px;
+        border-radius: 28px;
+        background: #F2F7FF;
+        padding: 24px;
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: 400;
+        margin-bottom: 16px;
+        color: #1C1B1F;
+    }
+
+    &__inputs {
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+
+        input {
+            border-radius: 4px 4px 0px 0px;
+            background: #E2EDFF;
+            border: none;
+            outline: none;
+            padding: 23px 0 16px 9px;
+            font-size: 16px;
+            display: block;
+            width: 100%;
+            border-bottom: 1px solid #000;
+        }
+    }
+}
+
+
+.modal__inputs label {
+    position: relative;
+}
+
+.modal__inputs span {
+    font-size: 12px;
+    position: absolute;
+    top: 8px;
+    left: 9px;
+}
+
+.modal__btns {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+}
+
+.btn{
+    padding: 12px;
+    background: none;
+    border: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.red{
+    color: #CF1B1B;
+}
+
+.puple {
+    color: #6750A4;
+}
+
+.list-enter-active,
+.list-leave-active {
+    transition: 300ms linear;
+}
+
+.list-enter-from,
+.list-leave-to {
+    opacity: 0;
+    transform: scale(0.9);
+}
